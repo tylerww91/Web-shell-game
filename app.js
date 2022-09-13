@@ -3,8 +3,8 @@ import { getRandomItem } from './utils.js';
 
 /* State */
 let gameState = 'guess';
-let userGuess = '';
-let pearl = '';
+// let userGuess = '';
+// let pearl = '';
 let guess = '';
 
 /* Actions */
@@ -33,9 +33,9 @@ const leftShell = document.getElementById('shell-1');
 const middleShell = document.getElementById('shell-2');
 const rightShell = document.getElementById('shell-3');
 
-const loseDisplay = document.getElementById('display-1');
-const nonDisplay = document.getElementById('display-2');
-const winDisplay = document.getElementById('display-3');
+// const loseDisplay = document.getElementById('display-1');
+// const nonDisplay = document.getElementById('display-2');
+// const winDisplay = document.getElementById('display-3');
 
 const resultsDiv = document.getElementById('results');
 const playAgain = document.getElementById('play-again-button');
