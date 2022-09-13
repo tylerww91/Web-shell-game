@@ -1,11 +1,11 @@
 /* Imports */
-// import { getRandomItem } from './utils.js';
+import { getRandomItem } from './utils.js';
 
 /* State */
-let gameState = 'results';
+let gameState = 'guess';
 let userGuess = '';
-let pearlLocation = '';
-let guess = 'guess-2';
+let pearl = '';
+let guess = '';
 
 /* Actions */
 function loadPage() {
@@ -13,8 +13,11 @@ function loadPage() {
 }
 
 /* Components */
-
+const pearlArray = ['pearl-1', 'pearl-2', 'pearl-3'];
 /* Component */
+
+let pearls = getRandomItem(pearlArray);
+
 // get DOM
 
 const guessLeft = document.getElementById('guess-1');
@@ -67,6 +70,26 @@ function displayShells() {
     }
 }
 // event listeners
+guessLeft.addEventListener('click', () => {
+    guess = 'guess-1';
+    displayShells(leftShell);
+    pearls;
+    gameState = 'results';
+});
+
+guessMiddle.addEventListener('click', () => {
+    guess = 'guess-2';
+    displayShells(middleShell);
+    pearls;
+    gameState = 'results';
+});
+
+guessRight.addEventListener('click', () => {
+    guess = 'guess-3';
+    displayShells(rightShell);
+    pearls;
+    gameState = 'results';
+});
 
 /* Run page load code */
 loadPage();
