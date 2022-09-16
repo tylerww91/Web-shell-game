@@ -49,9 +49,9 @@ const playAgain = document.getElementById('play-again-button');
 
 // display
 function displayShells() {
-    leftPearl.classList.remove('hidden');
-    middlePearl.classList.remove('hidden');
-    rightPearl.classList.remove('hidden');
+    // leftPearl.classList.remove('hidden');
+    // middlePearl.classList.remove('hidden');
+    // rightPearl.classList.remove('hidden');
     leftShell.classList.remove('reveal');
     resultsDiv.classList.add('hidden');
     playAgain.classList.add('hidden');
@@ -78,6 +78,15 @@ function guessShell(userChoice) {
     pearls;
     guessDisplay();
     pearlLocation();
+
+    //     if (guess === 'guess-1' &&  pearls === 'pearl-1') {
+    //         result = 'win';
+    //         wins++;
+    //         total++;
+    //     } else {guess === 'guess-2'
+    //         result = 'lose';
+    //     }
+    // }
 }
 
 function guessDisplay() {
@@ -132,13 +141,15 @@ function guessDisplay() {
 
 // event listeners
 guessLeft.addEventListener('click', () => {
+    userChoice = 'guess-1';
     guessShell(userChoice);
-    // userGuess = 'guess-1';
+    // leftShell.classList.add('reveal');
     // guessShell(userGuess);
     // gameState = 'results';
 });
 
 guessMiddle.addEventListener('click', () => {
+    userChoice = 'guess-2';
     guessShell(userChoice);
     // userGuess = 'guess-2';
     // displayShells(middleShell);
@@ -146,6 +157,7 @@ guessMiddle.addEventListener('click', () => {
 });
 
 guessRight.addEventListener('click', () => {
+    userChoice = 'guess-3';
     guessShell(userChoice);
     // userGuess = 'guess-3';
     // displayShells(rightShell);
