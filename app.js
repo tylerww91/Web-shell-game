@@ -7,6 +7,7 @@ let guess = '';
 let pearl = '';
 let userChoice = '';
 
+let result = '';
 let wins = 0;
 let losses = 0;
 let total = 0;
@@ -39,9 +40,10 @@ const leftShell = document.getElementById('shell-1');
 const middleShell = document.getElementById('shell-2');
 const rightShell = document.getElementById('shell-3');
 
-// const loseDisplay = document.getElementById('display-1');
-// const nonDisplay = document.getElementById('display-2');
-// const winDisplay = document.getElementById('display-3');
+//scoreboard
+const winsDisplay = document.getElementById('wins-display');
+const lossesDisplay = document.getElementById('losses-display');
+const totalDisplay = document.getElementById('total-display');
 
 //results
 const resultsDiv = document.getElementById('results');
@@ -78,15 +80,37 @@ function guessShell(userChoice) {
     pearls;
     guessDisplay();
     pearlLocation();
+    score();
+}
 
-    //     if (guess === 'guess-1' &&  pearls === 'pearl-1') {
-    //         result = 'win';
-    //         wins++;
-    //         total++;
-    //     } else {guess === 'guess-2'
-    //         result = 'lose';
-    //     }
-    // }
+function score() {
+    if (gameState === 'results') {
+        if (userChoice === 'guess-1' && pearls === 'pearl-1') {
+            result = 'win';
+            wins++;
+            total++;
+            winsDisplay.textContent = wins;
+            totalDisplay.textContent = total;
+        } else if (userChoice === 'guess-2' && pearls === 'pearl-2') {
+            result = 'win';
+            wins++;
+            total++;
+            winsDisplay.textContent = wins;
+            totalDisplay.textContent = total;
+        } else if (userChoice === 'guess-3' && pearls === 'pearl-3') {
+            result = 'win';
+            wins++;
+            total++;
+            winsDisplay.textContent = wins;
+            totalDisplay.textContent = total;
+        } else {
+            result = 'loss';
+            losses++;
+            total++;
+            lossesDisplay.textContent = losses;
+            totalDisplay.textContent = total;
+        }
+    }
 }
 
 function guessDisplay() {
@@ -166,4 +190,4 @@ guessRight.addEventListener('click', () => {
 
 /* Run page load code */
 loadPage();
-pearlLocation();
+// pearlLocation();
